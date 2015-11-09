@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cewong.parsetodolist.model.Task;
 import com.parse.GetCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
@@ -70,7 +72,7 @@ public class UpdateActivity extends ActionBarActivity {
                             Toast.LENGTH_LONG).show();
 
                 } else {
-                    ParseQuery<ParseObject> query = ParseQuery.getQuery("GameScore");
+                    ParseQuery<ParseObject> query = ParseQuery.getQuery("Task");
 
                     query.getInBackground(task.getTaskId(), new GetCallback<ParseObject>() {
                         public void done(ParseObject task, ParseException e) {
